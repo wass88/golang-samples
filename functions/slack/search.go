@@ -33,7 +33,11 @@ import (
 	"time"
 )
 
-type oldTimeStampError struct {
+
+
+
+
+pe oldTimeStampError struct {
 	s string
 }
 
@@ -93,7 +97,7 @@ func KGSearch(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if len(r.Form["text"]) == 0 {
-		log.Fatalf("emtpy text in form")
+		log.Fatalf("empty text in form")
 	}
 	kgSearchResponse, err := makeSearchRequest(r.Form["text"][0])
 	if err != nil {
